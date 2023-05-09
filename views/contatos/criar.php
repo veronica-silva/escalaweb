@@ -2,25 +2,25 @@
 require_once('../../models/config.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
-    $telefone = $_POST['telefone'];
-    $mensagem = $_POST['mensagem'];
+	$nome = $_POST['nome'];
+	$email = $_POST['email'];
+	$telefone = $_POST['telefone'];
+	$mensagem = $_POST['mensagem'];
 
-    $sql = "INSERT INTO contatos (nome, email, telefone, mensagem) VALUES (:nome, :email, :telefone, :mensagem)";
-    $stmt = $conn->prepare($sql);
+	$sql = "INSERT INTO contatos (nome, email, telefone, mensagem) VALUES (:nome, :email, :telefone, :mensagem)";
+	$stmt = $conn->prepare($sql);
 
-    $stmt->bindParam(':nome', $nome);
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':telefone', $telefone);
-    $stmt->bindParam(':mensagem', $mensagem);
+	$stmt->bindParam(':nome', $nome);
+	$stmt->bindParam(':email', $email);
+	$stmt->bindParam(':telefone', $telefone);
+	$stmt->bindParam(':mensagem', $mensagem);
 
-    if ($stmt->execute()) {
-        header('Location: index.php?controller=contatos&action=index');
-        exit;
-    } else {
-        $error = "Error adding contato";
-    }
+	if ($stmt->execute()) {
+		header('Location: index.php?controller=contatos&action=index');
+		exit;
+	} else {
+		$error = "Error adding contato";
+	}
 }
 ?>
 
@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
 	<div class="container">
 		<h1>Adicionar contato</h1>
-		<form method="post" action="index.php?controller=contatos&action=store">
+		<form method="post">
 			<div class="form-group">
 				<label for="nome">Nome:</label>
 				<input type="text" class="form-control" id="nome" name="nome" required>
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				<textarea class="form-control" id="mensagem" name="mensagem" required></textarea>
 			</div>
 			<button type="submit" class="btn btn-primary">Salvar</button>
-			<a href="index.php?controller=contatos&action=index" class="btn btn-default">Cancelar</a>
+			<a href="index.php" class="btn btn-default">Cancelar</a>
 		</form>
 	</div>
 </body>
