@@ -14,3 +14,7 @@
 ### A aplicação permite inserção de dados em /views/criar.php
 ### Foi usado bootstrap para a estilização de fontes e botões
 ### foi utilizada a biblioteca jquery para a apresentação dos dados em tabela
+
+### A aplicação deve ser acessada pelas pastas no localhost
+
+
