@@ -31,7 +31,7 @@
 				while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 				?>
 					<tr>
-						<td><?php echo $row['id']; ?></td>
+						<td><?php echo $row['idContato']; ?></td>
 						<td><?php echo $row['nome']; ?></td>
 						<td><?php echo $row['email']; ?></td>
 						<td><?php echo $row['telefone']; ?></td>
