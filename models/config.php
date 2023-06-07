@@ -1,10 +1,4 @@
 <?php
-
-$db_host = 'localhost';
-$db_name = 'escalaweb';
-$db_user = 'root';
-$db_pass = '';
-
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'escalaweb');
 define('DB_USER', 'root');
